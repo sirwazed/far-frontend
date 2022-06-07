@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/1d16d19a-8fa4-41e3-b476-0a24db1a0e71/microsoft.web/sites/subscriptions/1d16d19a-8fa4-41e3-b476-0a24db1a0e71/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/far-ecommerce",
+    "appService.deploySubpath": "dist\\my-first-app"
+}

@@ -1,0 +1,73 @@
+[{
+  "ID":1,
+  "Name":"Wrist Watch",
+  "Type":"Brand: Titan",
+  "Price": 200,
+  "Image": "watch1"
+},
+{
+  "ID":2,
+  "Name":"Jacket",
+  "Type":"Brand: Louis Vuitton",
+  "Price":1200,
+  "Image": "jacket"
+},
+{
+  "ID":3,
+  "Name":"Casual Dress",
+  "Type":"Brand: Burberry",
+  "Price":400,
+  "Image": "dress"
+},
+{
+  "ID":4,
+  "Name":"Hair Accessory",
+  "Type":"Brand: Dior",
+  "Price":100,
+  "Image": "band"
+},
+{
+  "ID":5,
+  "Name":"Denim Pant",
+  "Type":"Brand: Gucci",
+  "Price":700,
+  "Image": "jeans"
+},
+{
+  "ID":6,
+  "Name":"Earring",
+  "Type":"Brand: Hermes",
+  "Price":1100,
+  "Image": "earring"
+},
+{
+  "ID":7,
+  "Name":"Bracelet",
+  "Type":"Brand: Dior",
+  "Price":1900,
+  "Image": "bracelet"
+},
+{
+  "ID":8,
+  "Name":"Sunglasses",
+  "Type":"Brand: Prada",
+  "Price":900,
+  "Image": "sunglasses"
+},
+{
+  "ID":9,
+  "Name":"Finger Ring",
+  "Type":"Brand: Ralph Lauren",
+  "Price":3000,
+  "Image": "ring"
+},
+{
+  "ID":10,
+  "Name":"High Heels",
+  "Type":"Brand: Chanel",
+  "Price":2500,
+  "Image": "heel"
+}
+
+]
+

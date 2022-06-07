@@ -1,0 +1,262 @@
+<div class="card">
+  <div class="card-header">
+    Edit Product
+  </div>
+
+
+  <mat-tab-group>
+    <mat-tab label="ADD PRODUCT">
+
+      <mat-tab-group #formTabs>
+
+        <mat-tab label="Product Details">
+
+
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit(Form)" #Form="ngForm">
+              <div class="form-group col-12">
+                <label for="productname">Product Name</label>
+                <input type="text" class="form-control" #propName="ngModel" ngModel name="productName" required
+                  minlength="3" maxlength="50">
+                <span *ngIf="!propName.valid && propName.touched" class="error-block">
+
+                  Please provide product name
+
+                </span>
+              </div>
+
+
+              <div class="form-group col-12">
+                <label for="productshortcode">Product Short Code</label>
+                <input type="text" class="form-control" #propShortCode="ngModel" ngModel name="productShortCode"
+                  required minlength="3" maxlength="50">
+                <span *ngIf="!propShortCode.valid && propShortCode.touched" class="error-block">
+
+                  Please provide product short code
+
+                </span>
+              </div>
+
+
+
+              <div class="form-group col-12">
+                <label for="pcatagory">Catagory</label>
+                <input type="text" class="form-control" #propCatagory="ngModel" ngModel name="catagory" required>
+                <span *ngIf="!propCatagory.valid && propCatagory.touched" class="error-block">
+
+                  Please provide catagory
+
+                </span>
+              </div>
+
+
+
+
+
+              <div class="form-group col-12">
+                <label for="pprice">Price</label>
+                <input type="number" class="form-control" #propprice="ngModel" ngModel name="price" required>
+                <span *ngIf="!propprice.valid && propprice.touched" class="error-block">
+                  Please provide price
+                </span>
+              </div>
+
+
+              <div class="form-group col-12">
+                <label for="pdescription">Product Description</label>
+                <input type="text" class="form-control" #propdescription="ngModel" ngModel name="description"
+                  minlength="3" maxlength="250">
+                <span *ngIf="!propdescription.valid" class="error-block">
+
+                  Please provide valid description
+
+                </span>
+              </div>
+
+
+              <div class="form-group col-12">
+                <label for="isbestacheived">Is Best Achieved?</label>
+                <input type="text" class="form-control" #propachievement="ngModel" ngModel name="isBestAcheived">
+                <span *ngIf="!propachievement.valid" class="error-block">
+
+                  Please provide valid answer
+
+                </span>
+              </div>
+
+
+              <div class="form-group col-12">
+                <label for="createddate">Date</label>
+                <input type="text" class="form-control" #propDate="ngModel" ngModel name="createdDate" required>
+                <span *ngIf="!propDate.valid && propDate.touched" class="error-block">
+
+                  Please provide date
+
+                </span>
+              </div>
+
+              <div class="form-group col-12">
+                <label for="porigin">Origin</label>
+                <input type="text" class="form-control" #propOrigin="ngModel" ngModel name="origin" required>
+                <span *ngIf="!propOrigin.valid && propOrigin.touched" class="error-block">
+
+                  Please provide product origin
+
+                </span>
+              </div>
+
+              <div class="form-group col-12">
+                <label for="imageup">Upload Image Url</label>
+                <input type="text" class="form-control" #propImage="ngModel" ngModel name="imageUrl" required>
+                <span *ngIf="!propImage.valid && propImage.touched" class="error-block">
+
+                  Please provide image
+
+                </span>
+              </div>
+
+              <br>
+              <div class="form-group col-12">
+                <button [disabled]="!Form.valid" type="submit" class="btn btn-primary btn-block" >Add
+                  New Product</button>
+              </div>
+
+              <br>
+
+
+              <!-- <button mat-raised-button class="example-action-button" (click)="addLink()">Add New Product</button>-->
+
+              <!-- <button type="reset" class="btn btn-primary">Cancel</button>-->
+
+
+            </form>
+          </div>
+        </mat-tab>
+
+
+
+
+
+
+
+      </mat-tab-group>
+
+    </mat-tab>
+  </mat-tab-group>
+
+
+
+    <mat-tab-group>
+
+    <mat-tab label="DELETE PRODUCT">
+
+
+
+      <div class="container">
+
+
+        <table mat-table class="mat-elevation-z8" style="background-color: rgb(223, 223, 223);">
+
+          <tr>
+
+
+
+            <ng-container>
+
+              <th style="background-color: rgb(160, 154, 154);" mat-header-cell>Product Short Code</th>
+              <th style="background-color:rgb(160, 154, 154);" mat-header-cell>Catagory</th>
+              <th style="background-color: rgb(160, 154, 154);" mat-header-cell>Product Name</th>
+              <th style="background-color: rgb(160, 154, 154);" mat-header-cell>Product Image</th>
+              <th style="background-color: rgb(160, 154, 154);" mat-header-cell>Origin</th>
+              <th style="background-color: rgb(160, 154, 154);" mat-header-cell>Description</th>
+              <th style="background-color: rgb(160, 154, 154);" mat-header-cell>Price</th>
+              <th style="background-color: rgb(160, 154, 154);" mat-header-cell>Quantity</th>
+
+              <th style="background-color: rgb(160, 154, 154);" mat-header-cell>Action</th>
+
+            </ng-container>
+          </tr>
+
+
+            <tr *ngFor="let item of productList">
+              <ng-container>
+
+
+                <td style="width: 7%;" mat-cell><b> {{item.productShortCode}}</b></td>
+                <td style="width: 14%;" mat-cell> {{item.category}} </td>
+                <td style="width: 14%;" mat-cell> {{item.productName}} </td>
+                <td style="width: 5%;" mat-cell><img style="width: 120px;" src="{{item.imageUrl}}" alt=""></td>
+                <td style="width: 12%;" mat-cell>{{item.origin}}</td>
+                <td style="width: 25%;" mat-cell>{{item.description}}</td>
+                <td style="width: 12%;" mat-cell><b> ${{item.price}}</b></td>
+                <td style="width: 7%;" mat-cell><b>{{item.quantity}}</b></td>
+
+                <td style="width: 7%;" mat-cell> <button (click)="delete()" class="btn btn-danger"><i
+                      class="fa-regular fa-trash-can"></i></button> </td>
+              </ng-container>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+    </mat-tab>
+    </mat-tab-group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<p>
+  add-property works!
+  <button (click)="onBack()" class="btn btn-primary">Back</button>
+</p>-->
